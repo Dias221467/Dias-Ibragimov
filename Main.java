@@ -3,6 +3,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Choose which option you want to try:");
         System.out.println("1 - minimum\n2 - average\n3- prime numbers\n4 - find n!\n5 - Fibonacci number\n6 - a power n\n7 - reverse order");
+        System.out.println("8 - digits");
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
         switch (option){
@@ -49,7 +50,7 @@ public class Main {
                 System.out.println(powerof(a, n));
                 break;
             case 7:
-                System.out.println("Write the amount of numbers of array");
+                System.out.println("Write the amount of numbers of array:");
                 int n7 = scanner.nextInt();
                 int[] arr7 = new int[n7];
                 System.out.println("Write the numbers of array:");
@@ -57,6 +58,12 @@ public class Main {
                     arr7[i] = scanner.nextInt();
                 }
                 reverseorder(0, arr7);
+                break;
+            case 8:
+                System.out.println("Write a string s:");
+                String s = scanner.next();
+                System.out.println(digits(s));
+                break;
         }
     }
     public static int find_minimum(int n1, int[] arr){
@@ -112,5 +119,13 @@ public class Main {
         }
         reverseorder(n7+1, arr7);
         System.out.println(arr7[n7]);
+    }
+    public static boolean digits(String s){
+        if (s.length() == 1){
+            return Character.isDigit(s.charAt(0));
+        }
+        else{
+            return Character.isDigit(s.charAt(0)) && digits(s.substring(1));
+        }
     }
 }
