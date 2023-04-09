@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Choose which option you want to try:");
-        System.out.println("1 - minimum\n2 - average\n3- prime numbers\n4 - find n!\n5 - Fibonacci number");
+        System.out.println("1 - minimum\n2 - average\n3- prime numbers\n4 - find n!\n5 - Fibonacci number\n6 - a power n");
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
         switch (option){
@@ -40,6 +40,13 @@ public class Main {
                 System.out.println("Write some number:");
                 int n5 = scanner.nextInt();
                 System.out.println(fibbonachi(n5));
+                break;
+            case 6:
+                System.out.println("Write number a:");
+                int a = scanner.nextInt();
+                System.out.println("Write power:");
+                int n = scanner.nextInt();
+                System.out.println(powerof(a, n));
                 break;
         }
     }
@@ -83,5 +90,11 @@ public class Main {
             return n5;
         }
         return fibbonachi(n5 -1) + fibbonachi(n5-2);
+    }
+    public static int powerof(int a, int n){
+        if (n==1){
+            return a;
+        }
+        return a * powerof(a, n-1);
     }
 }
