@@ -77,6 +77,7 @@ public class Main {
                 System.out.println("b:");
                 int b10 = scanner.nextInt();
                 System.out.println(GCD(a10, b10));
+                break;
         }
     }
     public static int find_minimum(int n1, int[] arr){
