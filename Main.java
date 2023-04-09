@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Choose which option you want to try:");
-        System.out.println("1 - minimum\n2 - average\n3- prime numbers\n4 - find n!");
+        System.out.println("1 - minimum\n2 - average\n3- prime numbers\n4 - find n!\n5 - Fibonacci number");
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
         switch (option){
@@ -35,6 +35,11 @@ public class Main {
                 System.out.println("Write some number:");
                 int n4 = scanner.nextInt();
                 System.out.println(factorial(n4));
+                break;
+            case 5:
+                System.out.println("Write some number:");
+                int n5 = scanner.nextInt();
+                System.out.println(fibbonachi(n5));
                 break;
         }
     }
@@ -72,5 +77,11 @@ public class Main {
         if(n4 == 1)
             return 1;
         return n4 * factorial(n4-1);
+    }
+    public static int fibbonachi(int n5){
+        if (n5 <= 1) {
+            return n5;
+        }
+        return fibbonachi(n5 -1) + fibbonachi(n5-2);
     }
 }
