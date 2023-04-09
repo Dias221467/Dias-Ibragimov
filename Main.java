@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Choose which option you want to try:");
-        System.out.println("1 - minimum\n2 - average\n3- prime numbers\n");
+        System.out.println("1 - minimum\n2 - average\n3- prime numbers\n4 - find n!");
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
         switch (option){
@@ -30,6 +30,11 @@ public class Main {
                 System.out.println("Write some number:");
                 int n3 = scanner.nextInt();
                 System.out.println(define_prime_number(n3));
+                break;
+            case 4:
+                System.out.println("Write some number:");
+                int n4 = scanner.nextInt();
+                System.out.println(factorial(n4));
                 break;
         }
     }
@@ -62,5 +67,10 @@ public class Main {
        else{
            return "Prime";
        }
+    }
+    public static int factorial(int n4){
+        if(n4 == 1)
+            return 1;
+        return n4 * factorial(n4-1);
     }
 }
