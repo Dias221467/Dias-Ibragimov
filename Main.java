@@ -3,7 +3,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Choose which option you want to try:");
         System.out.println("1 - minimum\n2 - average\n3- prime numbers\n4 - find n!\n5 - Fibonacci number\n6 - a power n\n7 - reverse order");
-        System.out.println("8 - digits\n9 - binomical coefficient");
+        System.out.println("8 - digits\n9 - binomical coefficient\n10 - Find GCD of two numbers");
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
         switch (option){
@@ -145,5 +145,11 @@ public class Main {
         if(k9 == 0|| k9 == n9)
             return 1;
         return binom(n9-1, k9-1) + binom(n9-1, k9);
+    }
+    public static int GCD(int a10, int b10){
+        if (b10 == 0)
+            return a10;
+        else
+            return GCD(b10, a10%b10);
     }
 }
