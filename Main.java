@@ -3,7 +3,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Choose which option you want to try:");
         System.out.println("1 - minimum\n2 - average\n3- prime numbers\n4 - find n!\n5 - Fibonacci number\n6 - a power n\n7 - reverse order");
-        System.out.println("8 - digits");
+        System.out.println("8 - digits\n9 - binomical coefficient");
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
         switch (option){
@@ -64,6 +64,19 @@ public class Main {
                 String s = scanner.next();
                 System.out.println(digits(s));
                 break;
+            case 9:
+                System.out.println("Write two numbers to calculate:\nn:");
+                int n9 = scanner.nextInt();
+                System.out.println("k:");
+                int k9 = scanner.nextInt();
+                System.out.println(binom(n9, k9));
+                break;
+            case 10:
+                System.out.println("Write two numbers a and b\na:");
+                int a10 = scanner.nextInt();
+                System.out.println("b:");
+                int b10 = scanner.nextInt();
+                System.out.println(GCD(a10, b10));
         }
     }
     public static int find_minimum(int n1, int[] arr){
@@ -127,5 +140,10 @@ public class Main {
         else{
             return Character.isDigit(s.charAt(0)) && digits(s.substring(1));
         }
+    }
+    public static int binom(int n9, int k9){
+        if(k9 == 0|| k9 == n9)
+            return 1;
+        return binom(n9-1, k9-1) + binom(n9-1, k9);
     }
 }
