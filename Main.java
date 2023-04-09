@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Choose which option you want to try:");
-        System.out.println("1 - minimum\n2 - average\n3- prime numbers\n4 - find n!\n5 - Fibonacci number\n6 - a power n");
+        System.out.println("1 - minimum\n2 - average\n3- prime numbers\n4 - find n!\n5 - Fibonacci number\n6 - a power n\n7 - reverse order");
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
         switch (option){
@@ -48,6 +48,15 @@ public class Main {
                 int n = scanner.nextInt();
                 System.out.println(powerof(a, n));
                 break;
+            case 7:
+                System.out.println("Write the amount of numbers of array");
+                int n7 = scanner.nextInt();
+                int[] arr7 = new int[n7];
+                System.out.println("Write the numbers of array:");
+                for (int i = 0; i<n7; i++){
+                    arr7[i] = scanner.nextInt();
+                }
+                reverseorder(0, arr7);
         }
     }
     public static int find_minimum(int n1, int[] arr){
@@ -96,5 +105,12 @@ public class Main {
             return a;
         }
         return a * powerof(a, n-1);
+    }
+    public static void reverseorder(int n7, int[] arr7){
+        if (n7 == arr7.length) {
+            return;
+        }
+        reverseorder(n7+1, arr7);
+        System.out.println(arr7[n7]);
     }
 }
